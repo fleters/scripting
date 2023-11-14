@@ -6,8 +6,8 @@ if %errorlevel% equ 0 (
   goto :checkinternet
 ) else (
   cls & echo Fleter Project & echo =============== & echo. & echo.
-  cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) && fsutil dirty query %systemdrive% 1>nul 2>nul || (  cmd /u /c echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && ""%~s0""", "", "runas", 1 >> "%temp%\getadmin.vbs" && "%temp%\getadmin.vbs" && exit /B )
-  del "%temp%\getadmin.vbs"
+  echo Mohon membuka skrip ini pada user admin, atau 
+  echo jalankan skrip ini sebagai administrator.
   exit
 )
 
@@ -101,8 +101,6 @@ timeout /t 2 /nobreak >nul
 wmic os get caption | find /I "Pro N for Workstations" >nul
 if [%errorlevel%] == [0] (
   goto :notavaiable
-  pause >nul
-  exit
 )
 wmic os get caption | find /I "Pro for Workstations" >nul
 if [%errorlevel%] == [0] (
@@ -112,8 +110,6 @@ if [%errorlevel%] == [0] (
 wmic os get caption | find /I "Pro Education N" >nul
 if [%errorlevel%] == [0] (
   goto :notavaiable
-  pause >nul
-  exit
 )
 wmic os get caption | find /I "Pro Education" >nul
 if [%errorlevel%] == [0] (
@@ -184,6 +180,7 @@ echo.
 goto :exit
 
 :exit
+del "C:\temp\activate.cmd"
 echo Press any key to exit...
 pause >nul
 exit
