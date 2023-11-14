@@ -3,7 +3,6 @@ title ["Activation Windows | VINA Project - Fleter Project"]
 mode con cols=60 lines=13
 net session >nul 2>&1
 if %errorlevel% equ 0 (
-  cd /d "C:\Windows\System32"
   goto :checkinternet
 ) else (
   cls & echo Fleter Project & echo =============== & echo. & echo.
