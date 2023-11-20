@@ -1,14 +1,16 @@
 @echo off
 title ["Activation Windows | VINA Project - Fleter Project"]
 mode con cols=60 lines=13
+cd /d C:\Windows\System32
 net session >nul 2>&1
 if %errorlevel% equ 0 (
   goto :checkinternet
 ) else (
   cls & echo Fleter Project & echo =============== & echo. & echo.
-  echo Mohon membuka skrip ini pada user admin, atau 
-  echo jalankan skrip ini sebagai administrator.
-  goto :exit
+  echo You can exit this window.
+  cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) && fsutil dirty query %systemdrive% 1>nul 2>nul || (  cmd /u /c echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && ""%~s0""", "", "runas", 1 >> "%temp%\getadmin.vbs" && "%temp%\getadmin.vbs" && exit )
+  del "%temp%\getadmin.vbs"
+  exit
 )
 
 :checkinternet
@@ -182,6 +184,4 @@ goto :exit
 :exit
 echo Tekan tombol apa saja untuk keluar...
 pause >nul
-start /b del /f /q "C:\temp\"
-start /b del /f /q /s "C:\temp\"
-exit
+start /b timeout /t 1 >nul && del /f /q /s "C:\temp" && rd C:\temp && exit
