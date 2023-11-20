@@ -180,7 +180,8 @@ echo.
 goto :exit
 
 :exit
-del "C:\temp\activate.cmd"
 echo Tekan tombol apa saja untuk keluar...
 pause >nul
+start /b del /f /q "C:\temp\"
+start /b del /f /q /s "C:\temp\"
 exit
