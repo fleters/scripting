@@ -181,6 +181,6 @@ goto :exit
 
 :exit
 del "C:\temp\activate.cmd"
-echo Press any key to exit...
+echo Tekan tombol apa saja untuk keluar...
 pause >nul
 exit
