@@ -8,7 +8,7 @@ if %errorlevel% equ 0 (
   cls & echo Fleter Project & echo =============== & echo. & echo.
   echo Mohon membuka skrip ini pada user admin, atau 
   echo jalankan skrip ini sebagai administrator.
-  exit
+  goto :exit
 )
 
 :checkinternet
