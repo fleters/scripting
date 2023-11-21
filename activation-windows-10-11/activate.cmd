@@ -7,7 +7,7 @@ if %errorlevel% equ 0 (
   goto :checkinternet
 ) else (
   cls & echo Fleter Project & echo =============== & echo. & echo.
-  echo You can exit this window.
+  echo Please Wait...
   cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) && fsutil dirty query %systemdrive% 1>nul 2>nul || (  cmd /u /c echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && ""%~s0""", "", "runas", 1 >> "%temp%\getadmin.vbs" && "%temp%\getadmin.vbs" && exit )
   del "%temp%\getadmin.vbs"
   exit
