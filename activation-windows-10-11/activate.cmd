@@ -184,4 +184,4 @@ goto :exit
 :exit
 echo Tekan tombol apa saja untuk keluar...
 pause >nul
-start /b timeout /t 1 >nul && del /f /q /s "C:\temp" && rd C:\temp && exit
+del /f /q /s "C:\temp" >nul && rd C:\temp >nul && exit
