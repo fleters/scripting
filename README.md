@@ -2,6 +2,11 @@
 
 We may have created a useful script for you, please have a look at it first!
 
+## Table Of Content
+|Script            |Support      |Requirement       |
+|------------------|-------------|------------------|
+|Activation Windows|Windows 11/10|Windows PowerShell|
+
 
 ## Activate Windows (only windows 11)
 ```powershell
