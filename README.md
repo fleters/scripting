@@ -5,8 +5,8 @@ We may have created a useful script for you, please have a look at it first!
 ## Table Of Content
 |Script            |Support      |Requirement       |
 |------------------|-------------|------------------|
-|VC Redist         |Windows 11/10|Windows PowerShell|
-|Activation Windows|Windows 11/10|Windows PowerShell|
+|[VC Redist](#vc-redist)|Windows 11/10|Windows PowerShell|
+|[Activate Windows](#activate-windows)|Windows 11/10|Windows PowerShell|
 
 ### VC Redist
 ```powershell
